@@ -84,15 +84,29 @@
       color: var(--text-main);
     }
 
-    /* Hero / Portada */
+    /* Hero / Portada: imagen de fondo SOLO en esta sección superior */
     .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 4.5rem 1.5rem 3.5rem;
+      position: relative;
+      width: 100%;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 4.5rem 1.5rem 3.5rem;
+      overflow: hidden;
+      background-color: var(--bg-dark);
+      background-image:
+        linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.9)),
+        url("https://longevity-protocols.com/en/knowledge-base/interventions/positive/strength-training/.jpg"); /* Cambia esta ruta por tu imagen superior */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero h1 {
+      max-width: 820px;
       font-size: clamp(2rem, 5vw, 3.25rem);
       line-height: 1.15;
       margin-bottom: 1rem;
@@ -105,7 +119,7 @@
     .hero p {
       max-width: 620px;
       margin: 0 auto 2rem;
-      color: var(--text-muted);
+      color: #e2e8f0;
       font-size: 1.05rem;
     }
 
@@ -126,11 +140,12 @@
       transform: translateY(-1px);
     }
 
-    /* Secciones */
+    /* Secciones inferiores: mantienen fondo sólido oscuro */
     section {
       max-width: 1100px;
       margin: 0 auto;
       padding: 3rem 1.5rem;
+      background-color: var(--bg-dark);
     }
 
     .section-title {
@@ -270,6 +285,7 @@
       padding: 2.5rem 1.5rem 5rem;
       border-top: 1px solid var(--border);
       margin-top: 2rem;
+      background-color: var(--bg-dark);
     }
   </style>
 </head>
@@ -289,7 +305,7 @@
   </header>
 
   <main>
-    <section class="hero"> 
+    <section class="hero">
       <h1>Rendimiento y estilo en cada <span>entrenamiento</span></h1>
       <p>
         Camisetas transpirables, leggings de alta compresión y conjuntos diseñados para acompañarte en el gimnasio, correr o entrenar al aire libre.
@@ -320,7 +336,7 @@
                 class="btn-ws"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://wa.me/19739436297?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Pro%20(%2424.00)."
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Pro%20(%2424.00)."
               >
                 Pedir
               </a>
@@ -346,7 +362,7 @@
                 class="btn-ws"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://wa.me/19739436297?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Legging%20Sculpt%20Cintura%20Alta%20(%2436.00)."
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Legging%20Sculpt%20Cintura%20Alta%20(%2436.00)."
               >
                 Pedir
               </a>
@@ -372,7 +388,7 @@
                 class="btn-ws"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://wa.me/19739436297?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Short%20Running%202%20en%201%20(%2428.00)."
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Short%20Running%202%20en%201%20(%2428.00)."
               >
                 Pedir
               </a>
@@ -398,7 +414,7 @@
                 class="btn-ws"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://wa.me/19739436297?text=Hola%2C%20quiero%20pedir%20el%20Conjunto%20Entreno%20Completo%20(%2452.00)."
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20pedir%20el%20Conjunto%20Entreno%20Completo%20(%2452.00)."
               >
                 Pedir
               </a>
@@ -426,7 +442,7 @@
     class="whatsapp-float"
     target="_blank"
     rel="noopener noreferrer"
-    href="https://wa.me/19739436297?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20su%20ropa%20deportiva."
+    href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20su%20ropa%20deportiva."
   >
     WhatsApp
   </a>
