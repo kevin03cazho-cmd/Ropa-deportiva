@@ -6,13 +6,15 @@
   <title>PulseFit | Ropa Deportiva</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
       --accent: #38bdf8;
-      --whatsapp: #25d366;
-      --whatsapp-hover: #1ebe5d;
+      --accent-hover: #0284c7;
+      --whatsapp: #22c55e;
+      --whatsapp-hover: #16a34a;
+      --border: rgba(255, 255, 255, 0.1);
     }
 
     * {
@@ -27,18 +29,19 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
+    /* Encabezado y Menú */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background-color: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-container {
@@ -49,14 +52,19 @@
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 800;
       letter-spacing: 0.05em;
-      color: var(--text);
       text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .logo span {
+      color: var(--accent);
     }
 
     nav ul {
@@ -66,17 +74,17 @@
     }
 
     nav a {
-      color: var(--text);
+      color: var(--text-muted);
       text-decoration: none;
       font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--text-main);
     }
 
+    /* Hero / Portada */
     .hero {
       max-width: 1100px;
       margin: 0 auto;
@@ -97,77 +105,89 @@
     .hero p {
       max-width: 620px;
       margin: 0 auto 2rem;
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 1.05rem;
     }
 
     .btn-primary {
       display: inline-block;
-      background: var(--accent);
+      background-color: var(--accent);
       color: #082f49;
       font-weight: 700;
-      padding: 0.85rem 1.6rem;
-      border-radius: 999px;
       text-decoration: none;
-      transition: transform 0.2s, opacity 0.2s;
+      padding: 0.85rem 1.6rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.15s ease;
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
+      background-color: var(--accent-hover);
+      color: #ffffff;
+      transform: translateY(-1px);
     }
 
-    .section {
+    /* Secciones */
+    section {
       max-width: 1100px;
       margin: 0 auto;
       padding: 3rem 1.5rem;
     }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .section-header h2 {
-      font-size: 2rem;
+    .section-title {
+      font-size: 1.85rem;
       margin-bottom: 0.5rem;
     }
 
-    .section-header p {
-      color: var(--muted);
+    .section-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
     }
 
-    .grid {
+    /* Catálogo y Precios */
+    .grid-productos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 1.5rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s, border-color 0.2s;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.45);
+    .card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background-color: #0f172a;
+    }
+
+    .card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 1.25rem;
     }
 
     .badge {
-      align-self: flex-start;
-      background: rgba(56, 189, 248, 0.15);
-      color: var(--accent);
+      display: inline-block;
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 0.25rem 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      background-color: rgba(56, 189, 248, 0.12);
+      padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.65rem;
     }
 
     .card h3 {
@@ -175,120 +195,89 @@
       margin-bottom: 0.4rem;
     }
 
-    .card .desc {
-      color: var(--muted);
+    .card p {
+      color: var(--text-muted);
       font-size: 0.92rem;
-      margin-bottom: 1rem;
     }
 
-    .tallas {
+    .card-footer {
       display: flex;
-      gap: 0.4rem;
-      margin-bottom: 1.1rem;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
     }
 
-    .talla-pill {
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.07);
-      color: var(--text);
-    }
-
-    .price {
-      font-size: 1.5rem;
+    .precio {
+      font-size: 1.3rem;
       font-weight: 800;
-      margin-bottom: 1rem;
+      color: var(--text-main);
     }
 
-    .btn-wa {
-      display: block;
-      text-align: center;
-      background: var(--whatsapp);
-      color: #052e16;
-      font-weight: 700;
-      padding: 0.7rem 1rem;
-      border-radius: 10px;
+    .btn-ws {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: var(--whatsapp);
+      color: #ffffff;
       text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .btn-wa:hover {
-      background: var(--whatsapp-hover);
-    }
-
-    .info-box {
-      background: var(--card);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .info-box h2 {
-      margin-bottom: 0.75rem;
-    }
-
-    .info-box p {
-      color: var(--muted);
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2.5rem 1.5rem 5.5rem;
-      color: var(--muted);
+      font-weight: 600;
       font-size: 0.9rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      margin-top: 2rem;
+      padding: 0.6rem 0.95rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
     }
 
+    .btn-ws:hover {
+      background-color: var(--whatsapp-hover);
+    }
+
+    /* Envíos y Cambios */
+    .info-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Botón Flotante de WhatsApp */
     .whatsapp-float {
       position: fixed;
       right: 20px;
       bottom: 20px;
       z-index: 200;
-      background: var(--whatsapp);
-      color: #052e16;
-      font-weight: 800;
+      background-color: var(--whatsapp);
+      color: #ffffff;
       text-decoration: none;
-      padding: 0.9rem 1.25rem;
+      font-weight: 700;
+      padding: 0.85rem 1.25rem;
       border-radius: 999px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-      transition: transform 0.2s, background 0.2s;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
     .whatsapp-float:hover {
-      transform: scale(1.05);
-      background: var(--whatsapp-hover);
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-2px);
     }
 
-    @media (max-width: 600px) {
-      nav ul {
-        gap: 0.9rem;
-      }
-
-      nav a {
-        font-size: 0.85rem;
-      }
-
-      .whatsapp-float {
-        right: 14px;
-        bottom: 14px;
-        padding: 0.7rem 1rem;
-        font-size: 0.85rem;
-      }
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      padding: 2.5rem 1.5rem 5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <header id="inicio">
     <div class="nav-container">
-      <a href="#inicio" class="logo">PULSEFIT</a>
+      <a href="#inicio" class="logo">PULSE<span>FIT</span></a>
       <nav aria-label="Menú principal">
         <ul>
           <li><a href="#inicio">Inicio</a></li>
@@ -299,122 +288,146 @@
     </div>
   </header>
 
-  <section id="inicio" class="hero">
-    <h1>Rendimiento y estilo en cada <span>entrenamiento</span></h1>
-    <p>
-      Camisetas transpirables, leggings de alta compresión y conjuntos diseñados para acompañarte en el gimnasio, correr o entrenar al aire libre.
-    </p>
-    <a href="#precios" class="btn-primary">Ver colección y precios</a>
-  </section>
-
-  <section id="precios" class="section">
-    <div class="section-header">
-      <h2>Catálogo y Precios</h2>
-      <p>Tallas S, M, L y XL · Consulta disponibilidad directa por WhatsApp</p>
-    </div>
-
-    <div class="grid">
-      <article class="card">
-        <div>
-          <span class="badge">MÁS VENDIDO</span>
-          <h3>Camiseta Dry-Fit Pro</h3>
-          <p class="desc">Tejido ligero de secado rápido con costuras planas anti-rozaduras.</p>
-          <div class="tallas">
-            <span class="talla-pill">S</span>
-            <span class="talla-pill">M</span>
-            <span class="talla-pill">L</span>
-            <span class="talla-pill">XL</span>
-          </div>
-        </div>
-        <div>
-          <div class="price">$24.00</div>
-          <a class="btn-wa" target="_blank" rel="noopener noreferrer"
-             href="https://wa.me/15551234567?text=Hola%20PulseFit!%20Quiero%20pedir%20la%20Camiseta%20Dry-Fit%20Pro%20($24.00).%20Talla:%20">
-            Pedir por WhatsApp
-          </a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div>
-          <span class="badge">ALTA COMPRESIÓN</span>
-          <h3>Legging Sculpt Cintura Alta</h3>
-          <p class="desc">Ajuste firme, tela opaca y cintura anatómica para entrenamientos intensos.</p>
-          <div class="tallas">
-            <span class="talla-pill">S</span>
-            <span class="talla-pill">M</span>
-            <span class="talla-pill">L</span>
-            <span class="talla-pill">XL</span>
-          </div>
-        </div>
-        <div>
-          <div class="price">$36.00</div>
-          <a class="btn-wa" target="_blank" rel="noopener noreferrer"
-             href="https://wa.me/15551234567?text=Hola%20PulseFit!%20Quiero%20pedir%20el%20Legging%20Sculpt%20Cintura%20Alta%20($36.00).%20Talla:%20">
-            Pedir por WhatsApp
-          </a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div>
-          <span class="badge">NUEVO</span>
-          <h3>Short Running 2 en 1</h3>
-          <p class="desc">Short exterior transpirable con malla interna y bolsillo para celular.</p>
-          <div class="tallas">
-            <span class="talla-pill">S</span>
-            <span class="talla-pill">M</span>
-            <span class="talla-pill">L</span>
-            <span class="talla-pill">XL</span>
-          </div>
-        </div>
-        <div>
-          <div class="price">$28.00</div>
-          <a class="btn-wa" target="_blank" rel="noopener noreferrer"
-             href="https://wa.me/15551234567?text=Hola%20PulseFit!%20Quiero%20pedir%20el%20Short%20Running%202%20en%201%20($28.00).%20Talla:%20">
-            Pedir por WhatsApp
-          </a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div>
-          <span class="badge">AHORRO</span>
-          <h3>Conjunto Entreno Completo</h3>
-          <p class="desc">Camiseta + short o legging a juego con descuento especial de paquete.</p>
-          <div class="tallas">
-            <span class="talla-pill">S</span>
-            <span class="talla-pill">M</span>
-            <span class="talla-pill">L</span>
-            <span class="talla-pill">XL</span>
-          </div>
-        </div>
-        <div>
-          <div class="price">$52.00</div>
-          <a class="btn-wa" target="_blank" rel="noopener noreferrer"
-             href="https://wa.me/15551234567?text=Hola%20PulseFit!%20Quiero%20pedir%20el%20Conjunto%20Entreno%20Completo%20($52.00).%20Talla:%20">
-            Pedir por WhatsApp
-          </a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="envios" class="section">
-    <div class="info-box">
-      <h2>Envíos y Cambios</h2>
+  <main>
+    <section class="hero">
+      <h1>Rendimiento y estilo en cada <span>entrenamiento</span></h1>
       <p>
-        Realizamos envíos a todo el país y entregas locales coordinadas. Cambios de talla sin complicaciones dentro de los primeros 7 días conservando las etiquetas.
+        Camisetas transpirables, leggings de alta compresión y conjuntos diseñados para acompañarte en el gimnasio, correr o entrenar al aire libre.
       </p>
-    </div>
-  </section>
+      <a href="#precios" class="btn-primary">Ver colección y precios</a>
+    </section>
+
+    <section id="precios">
+      <h2 class="section-title">Catálogo y Precios</h2>
+      <p class="section-subtitle">Tallas S, M, L y XL · Consulta disponibilidad directa por WhatsApp</p>
+
+      <div class="grid-productos">
+        <article class="card">
+          <img
+            src="img/camiseta-dryfit.jpg"
+            alt="Camiseta Dry-Fit Pro deportiva"
+            class="card-img"
+          />
+          <div class="card-body">
+            <div>
+              <span class="badge">Más vendido</span>
+              <h3>Camiseta Dry-Fit Pro</h3>
+              <p>Tejido ligero de secado rápido con costuras planas anti-rozaduras.</p>
+            </div>
+            <div class="card-footer">
+              <span class="precio">$24.00</span>
+              <a
+                class="btn-ws"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Pro%20(%2424.00)."
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="img/legging-sculpt.jpg"
+            alt="Legging Sculpt Cintura Alta"
+            class="card-img"
+          />
+          <div class="card-body">
+            <div>
+              <span class="badge">Alta compresión</span>
+              <h3>Legging Sculpt Cintura Alta</h3>
+              <p>Ajuste firme, tela opaca y cintura anatómica para entrenamientos intensos.</p>
+            </div>
+            <div class="card-footer">
+              <span class="precio">$36.00</span>
+              <a
+                class="btn-ws"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Legging%20Sculpt%20Cintura%20Alta%20(%2436.00)."
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="img/short-running.jpg"
+            alt="Short Running 2 en 1"
+            class="card-img"
+          />
+          <div class="card-body">
+            <div>
+              <span class="badge">Nuevo</span>
+              <h3>Short Running 2 en 1</h3>
+              <p>Short exterior transpirable con malla interna y bolsillo para celular.</p>
+            </div>
+            <div class="card-footer">
+              <span class="precio">$28.00</span>
+              <a
+                class="btn-ws"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Short%20Running%202%20en%201%20(%2428.00)."
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="img/conjunto-entreno.jpg"
+            alt="Conjunto Entreno Completo"
+            class="card-img"
+          />
+          <div class="card-body">
+            <div>
+              <span class="badge">Ahorro</span>
+              <h3>Conjunto Entreno Completo</h3>
+              <p>Camiseta + short o legging a juego con descuento especial de paquete.</p>
+            </div>
+            <div class="card-footer">
+              <span class="precio">$52.00</span>
+              <a
+                class="btn-ws"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20pedir%20el%20Conjunto%20Entreno%20Completo%20(%2452.00)."
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="envios">
+      <h2 class="section-title">Envíos y Cambios</h2>
+      <div class="info-box">
+        <p>
+          Realizamos envíos a todo el país y entregas locales coordinadas. Cambios de talla sin complicaciones dentro de los primeros 7 días conservando las etiquetas.
+        </p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>© 2026 PulseFit Ropa Deportiva. Todos los derechos reservados.</p>
   </footer>
 
-  <a class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-     href="https://wa.me/15551234567?text=Hola%20PulseFit!%20Quiero%20consultar%20sobre%20la%20ropa%20deportiva">
+  <a
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20su%20ropa%20deportiva."
+  >
     WhatsApp
   </a>
 
