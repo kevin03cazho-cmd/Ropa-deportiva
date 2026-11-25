@@ -158,18 +158,6 @@
       margin-bottom: 2rem;
     }
 
-    .subsection-heading {
-      font-size: 1.3rem;
-      margin: 2.25rem 0 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-main);
-    }
-
-    .subsection-heading:first-of-type {
-      margin-top: 0;
-    }
-
     /* Catálogo y Precios */
     .grid-productos {
       display: grid;
@@ -225,6 +213,46 @@
     .card p {
       color: var(--text-muted);
       font-size: 0.92rem;
+    }
+
+    /* Opciones de camisas dentro de cada tarjeta */
+    .opciones-camisas {
+      margin-top: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .opciones-titulo {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin-bottom: 0.45rem;
+    }
+
+    .lista-camisas {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .lista-camisas a {
+      display: block;
+      font-size: 0.84rem;
+      color: #e2e8f0;
+      text-decoration: none;
+      background-color: rgba(15, 23, 42, 0.55);
+      border: 1px solid var(--border);
+      border-radius: 0.4rem;
+      padding: 0.35rem 0.6rem;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .lista-camisas a:hover {
+      border-color: var(--accent);
+      background-color: rgba(56, 189, 248, 0.12);
     }
 
     .card-footer {
@@ -329,9 +357,8 @@
       <h2 class="section-title">Catálogo y Precios</h2>
       <p class="section-subtitle">Tallas S, M, L y XL · Consulta disponibilidad directa por WhatsApp</p>
 
-      <!-- Apartado 1: Línea Dry-Fit (varias opciones de camiseta) -->
-      <h3 class="subsection-heading">Camisetas Dry-Fit</h3>
       <div class="grid-productos">
+        <!-- 1. Camiseta Dry-Fit Pro con opciones de camisas -->
         <article class="card">
           <img
             src="img/camiseta-dryfit.jpg"
@@ -343,7 +370,41 @@
               <span class="badge">Más vendido</span>
               <h3>Camiseta Dry-Fit Pro</h3>
               <p>Tejido ligero de secado rápido con costuras planas anti-rozaduras.</p>
+
+              <div class="opciones-camisas">
+                <div class="opciones-titulo">Opciones de camisas disponibles:</div>
+                <ul class="lista-camisas">
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20la%20Camisa%20Dry-Fit%20Cl%C3%A1sica%20Negra%20(%2424.00)."
+                    >
+                      • Camisa Dry-Fit Clásica Negra ($24.00)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20la%20Camisa%20Dry-Fit%20Azul%20Marino%20(%2424.00)."
+                    >
+                      • Camisa Dry-Fit Azul Marino ($24.00)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20la%20Camisa%20Dry-Fit%20Manga%20Larga%20(%2427.00)."
+                    >
+                      • Camisa Dry-Fit Manga Larga ($27.00)
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
+
             <div class="card-footer">
               <span class="precio">$24.00</span>
               <a
@@ -358,88 +419,7 @@
           </div>
         </article>
 
-        <article class="card">
-          <img
-            src="img/camiseta-dryfit-negra.jpg"
-            alt="Camiseta Dry-Fit Negra"
-            class="card-img"
-          />
-          <div class="card-body">
-            <div>
-              <span class="badge">Color clásico</span>
-              <h3>Camiseta Dry-Fit Negra</h3>
-              <p>Acabado mate transpirable ideal para sesiones de fuerza y gimnasio.</p>
-            </div>
-            <div class="card-footer">
-              <span class="precio">$24.00</span>
-              <a
-                class="btn-ws"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Negra%20(%2424.00)."
-              >
-                Pedir
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img
-            src="img/camiseta-dryfit-azul.jpg"
-            alt="Camiseta Dry-Fit Azul Marino"
-            class="card-img"
-          />
-          <div class="card-body">
-            <div>
-              <span class="badge">Nueva</span>
-              <h3>Camiseta Dry-Fit Azul Marino</h3>
-              <p>Corte atlético con ventilación lateral para mayor frescura.</p>
-            </div>
-            <div class="card-footer">
-              <span class="precio">$24.00</span>
-              <a
-                class="btn-ws"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Azul%20Marino%20(%2424.00)."
-              >
-                Pedir
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img
-            src="img/camiseta-dryfit-manga-larga.jpg"
-            alt="Camiseta Dry-Fit Manga Larga"
-            class="card-img"
-          />
-          <div class="card-body">
-            <div>
-              <span class="badge">Cobertura total</span>
-              <h3>Camiseta Dry-Fit Manga Larga</h3>
-              <p>Manga larga elástica de secado rápido para climas frescos o exteriores.</p>
-            </div>
-            <div class="card-footer">
-              <span class="precio">$27.00</span>
-              <a
-                class="btn-ws"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Manga%20Larga%20(%2427.00)."
-              >
-                Pedir
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <!-- Apartado 2: Alta Compresión y Entrenamiento -->
-      <h3 class="subsection-heading">Alta Compresión y Entrenamiento</h3>
-      <div class="grid-productos">
+        <!-- 2. Legging Sculpt Cintura Alta con opciones de camisas a juego -->
         <article class="card">
           <img
             src="img/legging-sculpt.jpg"
@@ -451,7 +431,41 @@
               <span class="badge">Alta compresión</span>
               <h3>Legging Sculpt Cintura Alta</h3>
               <p>Ajuste firme, tela opaca y cintura anatómica para entrenamientos intensos.</p>
+
+              <div class="opciones-camisas">
+                <div class="opciones-titulo">Camisas para combinar:</div>
+                <ul class="lista-camisas">
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20el%20Legging%20Sculpt%20con%20Camisa%20Compresi%C3%B3n%20Sculpt."
+                    >
+                      • + Camisa Compresión Sculpt
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20el%20Legging%20Sculpt%20con%20Camisa%20Dry-Fit%20Negra."
+                    >
+                      • + Camisa Dry-Fit Negra
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20el%20Legging%20Sculpt%20con%20Camisa%20Dry-Fit%20Manga%20Larga."
+                    >
+                      • + Camisa Dry-Fit Manga Larga
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
+
             <div class="card-footer">
               <span class="precio">$36.00</span>
               <a
@@ -466,36 +480,7 @@
           </div>
         </article>
 
-        <article class="card">
-          <img
-            src="img/camiseta-compresion-sculpt.jpg"
-            alt="Camiseta Compresión Sculpt"
-            class="card-img"
-          />
-          <div class="card-body">
-            <div>
-              <span class="badge">Ajuste firme</span>
-              <h3>Camiseta Compresión Sculpt</h3>
-              <p>Segunda piel elástica que acompaña cada movimiento sin perder forma.</p>
-            </div>
-            <div class="card-footer">
-              <span class="precio">$26.00</span>
-              <a
-                class="btn-ws"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Compresi%C3%B3n%20Sculpt%20(%2426.00)."
-              >
-                Pedir
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <!-- Apartado 3: Running y Exterior -->
-      <h3 class="subsection-heading">Running y Exterior</h3>
-      <div class="grid-productos">
+        <!-- 3. Short Running 2 en 1 con opciones de camisas -->
         <article class="card">
           <img
             src="img/short-running.jpg"
@@ -507,7 +492,41 @@
               <span class="badge">Nuevo</span>
               <h3>Short Running 2 en 1</h3>
               <p>Short exterior transpirable con malla interna y bolsillo para celular.</p>
+
+              <div class="opciones-camisas">
+                <div class="opciones-titulo">Camisas para correr:</div>
+                <ul class="lista-camisas">
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20el%20Short%20Running%20con%20Camisa%20Running%20Ligera."
+                    >
+                      • + Camisa Running Ligera
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20el%20Short%20Running%20con%20Camisa%20Dry-Fit%20Pro."
+                    >
+                      • + Camisa Dry-Fit Pro
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20el%20Short%20Running%20con%20Camisa%20Dry-Fit%20Azul%20Marino."
+                    >
+                      • + Camisa Dry-Fit Azul Marino
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
+
             <div class="card-footer">
               <span class="precio">$28.00</span>
               <a
@@ -522,36 +541,7 @@
           </div>
         </article>
 
-        <article class="card">
-          <img
-            src="img/camiseta-running-ligera.jpg"
-            alt="Camiseta Running Ligera"
-            class="card-img"
-          />
-          <div class="card-body">
-            <div>
-              <span class="badge">Ultraligera</span>
-              <h3>Camiseta Running Ligera</h3>
-              <p>Tela microperforada de alto flujo de aire para trotes y carreras.</p>
-            </div>
-            <div class="card-footer">
-              <span class="precio">$25.00</span>
-              <a
-                class="btn-ws"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Running%20Ligera%20(%2425.00)."
-              >
-                Pedir
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <!-- Apartado 4: Conjuntos -->
-      <h3 class="subsection-heading">Conjuntos</h3>
-      <div class="grid-productos">
+        <!-- 4. Conjunto Entreno Completo con opciones de camisas -->
         <article class="card">
           <img
             src="img/conjunto-entreno.jpg"
@@ -562,8 +552,42 @@
             <div>
               <span class="badge">Ahorro</span>
               <h3>Conjunto Entreno Completo</h3>
-              <p>Elige tu camiseta (Dry-Fit, Compresión o Running) + short o legging a juego.</p>
+              <p>Camiseta + short o legging a juego con descuento especial de paquete.</p>
+
+              <div class="opciones-camisas">
+                <div class="opciones-titulo">Elige tu camisa del conjunto:</div>
+                <ul class="lista-camisas">
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20el%20Conjunto%20Entreno%20(%2452.00)%20con%20Camisa%20Dry-Fit%20Pro."
+                    >
+                      • Conjunto con Camisa Dry-Fit Pro
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20el%20Conjunto%20Entreno%20(%2452.00)%20con%20Camisa%20Compresi%C3%B3n%20Sculpt."
+                    >
+                      • Conjunto con Camisa Compresión Sculpt
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20el%20Conjunto%20Entreno%20(%2452.00)%20con%20Camisa%20Running%20Ligera."
+                    >
+                      • Conjunto con Camisa Running Ligera
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
+
             <div class="card-footer">
               <span class="precio">$52.00</span>
               <a
