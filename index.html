@@ -99,7 +99,7 @@
       background-color: var(--bg-dark);
       background-image:
         linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.9)),
-        url("featured.jpg"); /* Cambia esta ruta por tu imagen superior */
+        url("featured.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -156,6 +156,18 @@
     .section-subtitle {
       color: var(--text-muted);
       margin-bottom: 2rem;
+    }
+
+    .subsection-heading {
+      font-size: 1.3rem;
+      margin: 2.25rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .subsection-heading:first-of-type {
+      margin-top: 0;
     }
 
     /* Catálogo y Precios */
@@ -317,6 +329,8 @@
       <h2 class="section-title">Catálogo y Precios</h2>
       <p class="section-subtitle">Tallas S, M, L y XL · Consulta disponibilidad directa por WhatsApp</p>
 
+      <!-- Apartado 1: Línea Dry-Fit (varias opciones de camiseta) -->
+      <h3 class="subsection-heading">Camisetas Dry-Fit</h3>
       <div class="grid-productos">
         <article class="card">
           <img
@@ -346,6 +360,88 @@
 
         <article class="card">
           <img
+            src="img/camiseta-dryfit-negra.jpg"
+            alt="Camiseta Dry-Fit Negra"
+            class="card-img"
+          />
+          <div class="card-body">
+            <div>
+              <span class="badge">Color clásico</span>
+              <h3>Camiseta Dry-Fit Negra</h3>
+              <p>Acabado mate transpirable ideal para sesiones de fuerza y gimnasio.</p>
+            </div>
+            <div class="card-footer">
+              <span class="precio">$24.00</span>
+              <a
+                class="btn-ws"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Negra%20(%2424.00)."
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="img/camiseta-dryfit-azul.jpg"
+            alt="Camiseta Dry-Fit Azul Marino"
+            class="card-img"
+          />
+          <div class="card-body">
+            <div>
+              <span class="badge">Nueva</span>
+              <h3>Camiseta Dry-Fit Azul Marino</h3>
+              <p>Corte atlético con ventilación lateral para mayor frescura.</p>
+            </div>
+            <div class="card-footer">
+              <span class="precio">$24.00</span>
+              <a
+                class="btn-ws"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Azul%20Marino%20(%2424.00)."
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="img/camiseta-dryfit-manga-larga.jpg"
+            alt="Camiseta Dry-Fit Manga Larga"
+            class="card-img"
+          />
+          <div class="card-body">
+            <div>
+              <span class="badge">Cobertura total</span>
+              <h3>Camiseta Dry-Fit Manga Larga</h3>
+              <p>Manga larga elástica de secado rápido para climas frescos o exteriores.</p>
+            </div>
+            <div class="card-footer">
+              <span class="precio">$27.00</span>
+              <a
+                class="btn-ws"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Manga%20Larga%20(%2427.00)."
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Apartado 2: Alta Compresión y Entrenamiento -->
+      <h3 class="subsection-heading">Alta Compresión y Entrenamiento</h3>
+      <div class="grid-productos">
+        <article class="card">
+          <img
             src="img/legging-sculpt.jpg"
             alt="Legging Sculpt Cintura Alta"
             class="card-img"
@@ -370,6 +466,36 @@
           </div>
         </article>
 
+        <article class="card">
+          <img
+            src="img/camiseta-compresion-sculpt.jpg"
+            alt="Camiseta Compresión Sculpt"
+            class="card-img"
+          />
+          <div class="card-body">
+            <div>
+              <span class="badge">Ajuste firme</span>
+              <h3>Camiseta Compresión Sculpt</h3>
+              <p>Segunda piel elástica que acompaña cada movimiento sin perder forma.</p>
+            </div>
+            <div class="card-footer">
+              <span class="precio">$26.00</span>
+              <a
+                class="btn-ws"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Compresi%C3%B3n%20Sculpt%20(%2426.00)."
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Apartado 3: Running y Exterior -->
+      <h3 class="subsection-heading">Running y Exterior</h3>
+      <div class="grid-productos">
         <article class="card">
           <img
             src="img/short-running.jpg"
@@ -398,6 +524,36 @@
 
         <article class="card">
           <img
+            src="img/camiseta-running-ligera.jpg"
+            alt="Camiseta Running Ligera"
+            class="card-img"
+          />
+          <div class="card-body">
+            <div>
+              <span class="badge">Ultraligera</span>
+              <h3>Camiseta Running Ligera</h3>
+              <p>Tela microperforada de alto flujo de aire para trotes y carreras.</p>
+            </div>
+            <div class="card-footer">
+              <span class="precio">$25.00</span>
+              <a
+                class="btn-ws"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Running%20Ligera%20(%2425.00)."
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Apartado 4: Conjuntos -->
+      <h3 class="subsection-heading">Conjuntos</h3>
+      <div class="grid-productos">
+        <article class="card">
+          <img
             src="img/conjunto-entreno.jpg"
             alt="Conjunto Entreno Completo"
             class="card-img"
@@ -406,7 +562,7 @@
             <div>
               <span class="badge">Ahorro</span>
               <h3>Conjunto Entreno Completo</h3>
-              <p>Camiseta + short o legging a juego con descuento especial de paquete.</p>
+              <p>Elige tu camiseta (Dry-Fit, Compresión o Running) + short o legging a juego.</p>
             </div>
             <div class="card-footer">
               <span class="precio">$52.00</span>
