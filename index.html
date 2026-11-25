@@ -6,16 +6,15 @@
   <title>PulseFit | Ropa Deportiva</title>
   <style>
     :root {
-      --bg: #0b0f17;
-      --surface: #131a26;
-      --surface-alt: #192232;
-      --text: #f3f6fb;
-      --muted: #9fb0c7;
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
       --accent: #38bdf8;
-      --accent-hover: #0ea5e9;
-      --whatsapp: #25d366;
-      --whatsapp-hover: #1ebe5d;
-      --border: rgba(255, 255, 255, 0.08);
+      --accent-hover: #0284c7;
+      --whatsapp: #22c55e;
+      --whatsapp-hover: #16a34a;
+      --border: rgba(255, 255, 255, 0.1);
     }
 
     * {
@@ -30,73 +29,73 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Encabezado y menú */
+    /* Encabezado y Menú */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11, 15, 23, 0.9);
+      background-color: rgba(15, 23, 42, 0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
 
-    .nav {
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      height: 68px;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      color: var(--text-main);
     }
 
-    .nav-links {
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav ul {
       list-style: none;
       display: flex;
-      gap: 24px;
+      gap: 1.5rem;
     }
 
-    .nav-links a {
-      color: var(--muted);
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
       font-weight: 500;
-      transition: color 0.2s;
+      transition: color 0.2s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
+    nav a:hover {
+      color: var(--text-main);
     }
 
-    /* Portada / Hero */
+    /* Hero / Portada */
     .hero {
-      padding: 84px 0 68px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem 3.5rem;
       text-align: center;
     }
 
     .hero h1 {
       font-size: clamp(2rem, 5vw, 3.25rem);
       line-height: 1.15;
-      margin-bottom: 16px;
+      margin-bottom: 1rem;
     }
 
     .hero h1 span {
@@ -105,92 +104,99 @@
 
     .hero p {
       max-width: 620px;
-      margin: 0 auto 28px;
-      color: var(--muted);
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
       font-size: 1.05rem;
     }
 
     .btn-primary {
       display: inline-block;
-      background: var(--accent);
-      color: #071019;
+      background-color: var(--accent);
+      color: #082f49;
       font-weight: 700;
-      padding: 13px 24px;
-      border-radius: 10px;
-      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+      padding: 0.85rem 1.6rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.15s ease;
     }
 
     .btn-primary:hover {
-      background: var(--accent-hover);
+      background-color: var(--accent-hover);
+      color: #ffffff;
       transform: translateY(-1px);
     }
 
     /* Secciones */
     section {
-      padding: 64px 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
     }
 
-    .section-header {
-      margin-bottom: 32px;
-    }
-
-    .section-header h2 {
+    .section-title {
       font-size: 1.85rem;
-      margin-bottom: 6px;
+      margin-bottom: 0.5rem;
     }
 
-    .section-header p {
-      color: var(--muted);
+    .section-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
     }
 
-    /* Catálogo y precios */
-    .grid {
+    /* Catálogo y Precios */
+    .grid-productos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
     }
 
     .card {
-      background: var(--surface);
+      background-color: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 22px;
+      border-radius: 0.75rem;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 16px;
     }
 
     .card-img {
-      display: block;
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      background-color: var(--surface-alt);
+      display: block;
+      background-color: #0f172a;
     }
 
-    .tag {
+    .card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 1.25rem;
+    }
+
+    .badge {
       display: inline-block;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.06em;
       text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: var(--accent);
-      background: rgba(56, 189, 248, 0.12);
-      padding: 4px 10px;
+      background-color: rgba(56, 189, 248, 0.12);
+      padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      margin-bottom: 10px;
+      margin-bottom: 0.65rem;
     }
 
     .card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 6px;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
     }
 
     .card p {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.92rem;
     }
 
@@ -198,92 +204,82 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      padding-top: 12px;
+      gap: 0.75rem;
+      padding-top: 1rem;
       border-top: 1px solid var(--border);
     }
 
-    .price {
-      font-size: 1.25rem;
+    .precio {
+      font-size: 1.3rem;
       font-weight: 800;
+      color: var(--text-main);
     }
 
-    .btn-wa {
-      display: inline-block;
-      background: var(--whatsapp);
-      color: #07190e;
-      font-weight: 700;
-      font-size: 0.88rem;
-      padding: 9px 14px;
-      border-radius: 8px;
-      transition: background 0.2s;
-      white-space: nowrap;
-    }
-
-    .btn-wa:hover {
-      background: var(--whatsapp-hover);
-    }
-
-    /* Envíos */
-    .info-box {
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-    }
-
-    .info-box p {
-      color: var(--muted);
-      max-width: 720px;
-    }
-
-    /* Pie de página */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 0;
-      text-align: center;
-      color: var(--muted);
+    .btn-ws {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: var(--whatsapp);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
       font-size: 0.9rem;
+      padding: 0.6rem 0.95rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease;
     }
 
-    /* Botón flotante de WhatsApp */
-    .wa-float {
+    .btn-ws:hover {
+      background-color: var(--whatsapp-hover);
+    }
+
+    /* Envíos y Cambios */
+    .info-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Botón Flotante de WhatsApp */
+    .whatsapp-float {
       position: fixed;
       right: 20px;
       bottom: 20px;
       z-index: 200;
-      background: var(--whatsapp);
-      color: #07190e;
-      font-weight: 800;
-      padding: 14px 18px;
+      background-color: var(--whatsapp);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.85rem 1.25rem;
       border-radius: 999px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-      transition: transform 0.2s, background 0.2s;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    .wa-float:hover {
-      background: var(--whatsapp-hover);
-      transform: scale(1.04);
+    .whatsapp-float:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-2px);
     }
 
-    @media (max-width: 600px) {
-      .nav-links {
-        gap: 14px;
-        font-size: 0.92rem;
-      }
-      .hero {
-        padding: 64px 0 48px;
-      }
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      padding: 2.5rem 1.5rem 5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
   <header id="inicio">
-    <div class="container nav">
-      <a href="#inicio" class="logo">PulseFit</a>
+    <div class="nav-container">
+      <a href="#inicio" class="logo">PULSE<span>FIT</span></a>
       <nav aria-label="Menú principal">
-        <ul class="nav-links">
+        <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#precios">Precios</a></li>
           <li><a href="#envios">Envíos</a></li>
@@ -294,101 +290,146 @@
 
   <main>
     <section class="hero">
-      <div class="container">
-        <h1>Rendimiento y estilo en cada <span>entrenamiento</span></h1>
-        <p>
-          Camisetas transpirables, leggings de alta compresión y conjuntos diseñados para acompañarte en el gimnasio, correr o entrenar al aire libre.
-        </p>
-        <a href="#precios" class="btn-primary">Ver colección y precios</a>
-      </div>
+      <h1>Rendimiento y estilo en cada <span>entrenamiento</span></h1>
+      <p>
+        Camisetas transpirables, leggings de alta compresión y conjuntos diseñados para acompañarte en el gimnasio, correr o entrenar al aire libre.
+      </p>
+      <a href="#precios" class="btn-primary">Ver colección y precios</a>
     </section>
 
     <section id="precios">
-      <div class="container">
-        <div class="section-header">
-          <h2>Catálogo y Precios</h2>
-          <p>Tallas S, M, L y XL · Consulta disponibilidad directa por WhatsApp</p>
-        </div>
+      <h2 class="section-title">Catálogo y Precios</h2>
+      <p class="section-subtitle">Tallas S, M, L y XL · Consulta disponibilidad directa por WhatsApp</p>
 
-        <div class="grid">
-          <article class="card">
+      <div class="grid-productos">
+        <article class="card">
+          <img
+            src="img/camiseta-dryfit.jpg"
+            alt="Camiseta Dry-Fit Pro deportiva"
+            class="card-img"
+          />
+          <div class="card-body">
             <div>
-              <img src="camiseta-dryfit.jpg" alt="Camiseta Dry-Fit Pro" class="card-img" />
-              <span class="tag">Más vendido</span>
+              <span class="badge">Más vendido</span>
               <h3>Camiseta Dry-Fit Pro</h3>
               <p>Tejido ligero de secado rápido con costuras planas anti-rozaduras.</p>
             </div>
             <div class="card-footer">
-              <span class="price">$24.00</span>
+              <span class="precio">$24.00</span>
               <a
-                class="btn-wa"
-                href="https://wa.me/19739436297?text=Hola!%20Quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Pro%20(%2424.00)."
+                class="btn-ws"
                 target="_blank"
                 rel="noopener noreferrer"
-              >Pedir</a>
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Pro%20(%2424.00)."
+              >
+                Pedir
+              </a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="card">
+        <article class="card">
+          <img
+            src="img/legging-sculpt.jpg"
+            alt="Legging Sculpt Cintura Alta"
+            class="card-img"
+          />
+          <div class="card-body">
             <div>
-              <img src="legging-sculpt.jpg" alt="Legging Sculpt Cintura Alta" class="card-img" />
-              <span class="tag">Alta compresión</span>
+              <span class="badge">Alta compresión</span>
               <h3>Legging Sculpt Cintura Alta</h3>
               <p>Ajuste firme, tela opaca y cintura anatómica para entrenamientos intensos.</p>
             </div>
             <div class="card-footer">
-              <span class="price">$36.00</span>
+              <span class="precio">$36.00</span>
               <a
-                class="btn-wa"
-                href="https://wa.me/19739436297?text=Hola!%20Quiero%20consultar%20disponibilidad%20del%20Legging%20Sculpt%20Cintura%20Alta%20(%2436.00)."
+                class="btn-ws"
                 target="_blank"
                 rel="noopener noreferrer"
-              >Pedir</a>
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Legging%20Sculpt%20Cintura%20Alta%20(%2436.00)."
+              >
+                Pedir
+              </a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="card">
+        <article class="card">
+          <img
+            src="img/short-running.jpg"
+            alt="Short Running 2 en 1"
+            class="card-img"
+          />
+          <div class="card-body">
             <div>
-              <img src="short-running.jpg" alt="Short Running 2 en 1" class="card-img" />
-              <span class="tag">Nuevo</span>
+              <span class="badge">Nuevo</span>
               <h3>Short Running 2 en 1</h3>
               <p>Short exterior transpirable con malla interna y bolsillo para celular.</p>
             </div>
             <div class="card-footer">
-              <span class="price">$28.00</span>
+              <span class="precio">$28.00</span>
               <a
-                class="btn-wa"
-                href="https://wa.me/19739436297?text=Hola!%20Quiero%20consultar%20disponibilidad%20del%20Short%20Running%202%20en%201%20(%2428.00)."
+                class="btn-ws"
                 target="_blank"
                 rel="noopener noreferrer"
-              >Pedir</a>
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Short%20Running%202%20en%201%20(%2428.00)."
+              >
+                Pedir
+              </a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="card">
+        <article class="card">
+          <img
+            src="img/conjunto-entreno.jpg"
+            alt="Conjunto Entreno Completo"
+            class="card-img"
+          />
+          <div class="card-body">
             <div>
-              <img src="conjunto-entreno.jpg" alt="Conjunto Entreno Completo" class="card-img" />
-              <span class="tag">Ahorro</span>
+              <span class="badge">Ahorro</span>
               <h3>Conjunto Entreno Completo</h3>
               <p>Camiseta + short o legging a juego con descuento especial de paquete.</p>
             </div>
             <div class="card-footer">
-              <span class="price">$52.00</span>
+              <span class="precio">$52.00</span>
               <a
-                class="btn-wa"
-                href="https://wa.me/19739436297?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Entreno%20Completo%20(%2452.00)."
+                class="btn-ws"
                 target="_blank"
                 rel="noopener noreferrer"
-              >Pedir</a>
+                href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20pedir%20el%20Conjunto%20Entreno%20Completo%20(%2452.00)."
+              >
+                Pedir
+              </a>
             </div>
-          </article>
-        </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="envios">
-      <div class="container">
-        <div class="section-header">
-          <h2>Envíos y Cambios</h2>
-        </div>
-        <div class="info-box
+      <h2 class="section-title">Envíos y Cambios</h2>
+      <div class="info-box">
+        <p>
+          Realizamos envíos a todo el país y entregas locales coordinadas. Cambios de talla sin complicaciones dentro de los primeros 7 días conservando las etiquetas.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 PulseFit Ropa Deportiva. Todos los derechos reservados.</p>
+  </footer>
+
+  <a
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20su%20ropa%20deportiva."
+  >
+    WhatsApp
+  </a>
+
+</body>
+</html>
