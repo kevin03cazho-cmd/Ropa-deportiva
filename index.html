@@ -1,432 +1,330 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PulseFit | Ropa Deportiva</title>
-  <style>
-    :root {
-      --bg-dark: #0f172a;
-      --bg-card: #1e293b;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-hover: #0284c7;
-      --whatsapp: #22c55e;
-      --whatsapp-hover: #16a34a;
-      --border: rgba(255, 255, 255, 0.1);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX Sport | Ropa Deportiva de Alto Rendimiento</title>
+    <!-- Fuente moderna de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- VARIABLES DE COLOR (Cámbialas para adaptar a tu marca) --- */
+        :root {
+            --color-primario: #111111;      /* Negro intenso */
+            --color-acento: #ccff00;        /* Verde neón deportivo */
+            --color-fondo: #f4f4f6;         /* Gris muy claro */
+            --color-texto: #333333;
+            --color-whatsapp: #25D366;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        /* --- ESTILOS GENERALES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
+        /* --- MENÚ DE NAVEGACIÓN --- */
+        header {
+            background-color: var(--color-primario);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-    /* Encabezado y Menú */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: white;
+            text-decoration: none;
+        }
 
-    .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+        .logo span {
+            color: var(--color-acento);
+        }
 
-    .logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      color: var(--text-main);
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-    .logo span {
-      color: var(--accent);
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
+        nav a:hover {
+            color: var(--color-acento);
+        }
 
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
+        /* --- SECCIÓN PRINCIPAL (HERO) --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
 
-    nav a:hover {
-      color: var(--text-main);
-    }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
 
-    /* Hero / Portada */
-    .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 4.5rem 1.5rem 3.5rem;
-      text-align: center;
-    }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      line-height: 1.15;
-      margin-bottom: 1rem;
-    }
+        .btn-principal {
+            background-color: var(--color-acento);
+            color: var(--color-primario);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+        }
 
-    .hero h1 span {
-      color: var(--accent);
-    }
+        .btn-principal:hover {
+            transform: scale(1.05);
+        }
 
-    .hero p {
-      max-width: 620px;
-      margin: 0 auto 2rem;
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
+        /* --- CATÁLOGO Y PRECIOS --- */
+        .contenedor {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
 
-    .btn-primary {
-      display: inline-block;
-      background-color: var(--accent);
-      color: #082f49;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 0.85rem 1.6rem;
-      border-radius: 0.5rem;
-      transition: background-color 0.2s ease, transform 0.15s ease;
-    }
+        .titulo-seccion {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
 
-    .btn-primary:hover {
-      background-color: var(--accent-hover);
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
 
-    /* Secciones */
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
-    }
+        .tarjeta {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    .section-title {
-      font-size: 1.85rem;
-      margin-bottom: 0.5rem;
-    }
+        .tarjeta:hover {
+            transform: translateY(-5px);
+        }
 
-    .section-subtitle {
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
+        .tarjeta img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
 
-    /* Catálogo y Precios */
-    .grid-productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
+        .info-producto {
+            padding: 20px;
+        }
 
-    .card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+        .info-producto h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
 
-    .card-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-      background-color: #0f172a;
-    }
+        .descripcion {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
 
-    .card-body {
-      padding: 1.25rem 1.5rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-      gap: 1.25rem;
-    }
+        .precio {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--color-primario);
+            margin-bottom: 15px;
+        }
 
-    .badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-      background-color: rgba(56, 189, 248, 0.12);
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      margin-bottom: 0.65rem;
-    }
+        .btn-comprar {
+            display: block;
+            text-align: center;
+            background-color: var(--color-primario);
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
 
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.4rem;
-    }
+        .btn-comprar:hover {
+            background-color: var(--color-whatsapp);
+            color: white;
+        }
 
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-primario);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
 
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
+        /* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--color-whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
 
-    .precio {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--text-main);
-    }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
 
-    .btn-ws {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background-color: var(--whatsapp);
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 0.6rem 0.95rem;
-      border-radius: 0.5rem;
-      transition: background-color 0.2s ease;
-    }
-
-    .btn-ws:hover {
-      background-color: var(--whatsapp-hover);
-    }
-
-    /* Envíos y Cambios */
-    .info-box {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      padding: 1.75rem;
-      color: var(--text-muted);
-    }
-
-    /* Botón Flotante de WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 200;
-      background-color: var(--whatsapp-color);
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 0.85rem 1.25rem;
-      border-radius: 999px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-      transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .whatsapp-float:hover {
-      background-color: var(--whatsapp-hover);
-      transform: translateY(-2px);
-    }
-
-    footer {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      padding: 2.5rem 1.5rem 5rem;
-      border-top: 1px solid var(--border);
-      margin-top: 2rem;
-    }
-  </style>
+        /* --- ADAPTACIÓN A MÓVILES --- */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            nav ul { gap: 10px; }
+            nav a { font-size: 0.8rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <header id="inicio">
-    <div class="nav-container">
-      <a href="#inicio" class="logo">PULSE<span>FIT</span></a>
-      <nav aria-label="Menú principal">
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#precios">Precios</a></li>
-          <li><a href="#envios">Envíos</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- MENÚ -->
+    <header>
+        <a href="#" class="logo">APEX<span>SPORT</span></a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section class="hero">
-      <h1>Rendimiento y estilo en cada <span>entrenamiento</span></h1>
-      <p>
-        Camisetas transpirables, leggings de alta compresión y conjuntos diseñados para acompañarte en el gimnasio, correr o entrenar al aire libre.
-      </p>
-      <a href="#precios" class="btn-primary">Ver colección y precios</a>
+    <!-- PORTADA -->
+    <section id="inicio" class="hero">
+        <h1>Supera tus límites</h1>
+        <p>Ropa deportiva diseñada con tecnología transpirable para máximo confort en cada entrenamiento.</p>
+        <a href="#catalogo" class="btn-principal">Ver Colección</a>
     </section>
 
-    <section id="precios">
-      <h2 class="section-title">Catálogo y Precios</h2>
-      <p class="section-subtitle">Tallas S, M, L y XL · Consulta disponibilidad directa por WhatsApp</p>
+    <!-- PRODUCTOS Y PRECIOS -->
+    <section id="catalogo" class="contenedor">
+        <h2 class="titulo-seccion">Nuestra Colección</h2>
+        
+        <div class="grid-productos">
+            <!-- Producto 1 -->
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80" alt="Camiseta Dry-Fit">
+                <div class="info-producto">
+                    <h3>Camiseta Pro Dry-Fit</h3>
+                    <p class="descripcion">Tela ultraligera de secado rápido. Tallas S, M, L, XL.</p>
+                    <div class="precio">$25.00 USD</div>
+                    <a href="https://wa.me/521000000000?text=Hola,%20me%20interesa%20la%20Camiseta%20Pro%20Dry-Fit" target="_blank" class="btn-comprar">Pedir por WhatsApp</a>
+                </div>
+            </div>
 
-      <div class="grid-productos">
-        <article class="card">
-          <img
-            src="negro.jpg"alt="camiseta compresion" class="card-img"/>
-            
-         
-              <span class="badge">Más vendido</span>
-              <h3>Camiseta Dry-Fit Pro</h3>
-              <p>Tejido ligero de secado rápido con costuras planas anti-rozaduras.</p>
+            <!-- Producto 2 -->
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=600&q=80" alt="Leggings de Compresión">
+                <div class="info-producto">
+                    <h3>Leggings High-Flex</h3>
+                    <p class="descripcion">Cintura alta, cero transparencias y soporte muscular.</p>
+                    <div class="precio">$38.00 USD</div>
+                    <a href="https://wa.me/521000000000?text=Hola,%20me%20interesan%20los%20Leggings%20High-Flex" target="_blank" class="btn-comprar">Pedir por WhatsApp</a>
+                </div>
             </div>
-            <div class="card-footer">
-              <span class="precio">$24.00</span>
-              <a
-                class="btn-wa"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/19739436297?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20la%20Camiseta%20Dry-Fit%20Pro%20(%2424.00)."
-              >
-                Pedir
-              </a>
-            </div>
-          </div>
-        </article>
 
-        <article class="card">
-          <img
-            src="img/legging-sculpt.jpg"
-            alt="Legging Sculpt Cintura Alta"
-            class="card-img"
-          />
-          <div class="card-body">
-            <div>
-              <span class="badge">Alta compresión</span>
-              <h3>Legging Sculpt Cintura Alta</h3>
-              <p>Ajuste firme, tela opaca y cintura anatómica para entrenamientos intensos.</p>
+            <!-- Producto 3 -->
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=600&q=80" alt="Shorts de Entrenamiento">
+                <div class="info-producto">
+                    <h3>Shorts Runner 2 en 1</h3>
+                    <p class="descripcion">Con licra interna y bolsillo oculto para celular.</p>
+                    <div class="precio">$30.00 USD</div>
+                    <a href="https://wa.me/521000000000?text=Hola,%20me%20interesan%20los%20Shorts%20Runner" target="_blank" class="btn-comprar">Pedir por WhatsApp</a>
+                </div>
             </div>
-            <div class="card-footer">
-              <span class="precio">$36.00</span>
-              <a
-                class="btn-wa"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/19739436297?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Legging%20Sculpt%20Cintura%20Alta%20(%2436.00)."
-              >
-                Pedir
-              </a>
-            </div>
-          </div>
-        </article>
 
-        <article class="card">
-          <img
-            src="img/short-running.jpg"
-            alt="Short Running 2 en 1"
-            class="card-img"
-          />
-          <div class="card-body">
-            <div>
-              <span class="badge">Nuevo</span>
-              <h3>Short Running 2 en 1</h3>
-              <p>Short exterior transpirable con malla interna y bolsillo para celular.</p>
+            <!-- Producto 4 -->
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80" alt="Sudadera Deportiva">
+                <div class="info-producto">
+                    <h3>Hoodie Térmico Apex</h3>
+                    <p class="descripcion">Ideal para calentamiento y entrenamientos al aire libre.</p>
+                    <div class="precio">$45.00 USD</div>
+                    <a href="https://wa.me/521000000000?text=Hola,%20me%20interesa%20el%20Hoodie%20Térmico" target="_blank" class="btn-comprar">Pedir por WhatsApp</a>
+                </div>
             </div>
-            <div class="card-footer">
-              <span class="precio">$28.00</span>
-              <a
-                class="btn-wa"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/19739436297?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Short%20Running%202%20en%201%20(%2428.00)."
-              >
-                Pedir
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img
-            src="img/conjunto-entreno.jpg"
-            alt="Conjunto Entreno Completo"
-            class="card-img"
-          />
-          <div class="card-body">
-            <div>
-              <span class="badge">Ahorro</span>
-              <h3>Conjunto Entreno Completo</h3>
-              <p>Camiseta + short o legging a juego con descuento especial de paquete.</p>
-            </div>
-            <div class="card-footer">
-              <span class="precio">$52.00</span>
-              <a
-                class="btn-wa"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/19739436297?text=Hola%2C%20quiero%20pedir%20el%20Conjunto%20Entreno%20Completo%20(%2452.00)."
-              >
-                Pedir
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
+        </div>
     </section>
 
-    <section id="envios">
-      <h2 class="section-title">Envíos y Cambios</h2>
-      <div class="info-box">
-        <p>
-          Realizamos envíos a todo el país y entregas locales coordinadas. Cambios de talla sin complicaciones dentro de los primeros 7 días conservando las etiquetas.
-        </p>
-      </div>
-    </section>
-  </main>
+    <!-- PIE DE PÁGINA -->
+    <footer id="contacto">
+        <h3>APEX SPORT</h3>
+        <p>Envíos a todo el país | Pagos seguros</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #888;">© 2026 Todos los derechos reservados.</p>
+    </footer>
 
-  <footer>
-    <p>© 2026 PulseFit Ropa Deportiva. Todos los derechos reservados.</p>
-  </footer>
-
-  <a
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://wa.me/TU_NUMERO_AQUI?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20su%20ropa%20deportiva."
-  >
-    WhatsApp
-  </a>
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/521000000000?text=Hola,%20quisiera%20más%20información%20sobre%20su%20ropa%20deportiva" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+        <!-- Ícono SVG de WhatsApp -->
+        <svg width="35" height="35" viewBox="0 0 24 24" fill="white">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+        </svg>
+    </a>
 
 </body>
 </html>
