@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseFit | Ropa Deportiva</title>
+  <style>
+    /* Variables de color y estilos base */
+    :root {
+      --bg-color: #0f172a;
+      --surface-color: #1e293b;
+      --text-color: #f8fafc;
+      --muted-color: #94a3b8;
+      --accent-color: #38bdf8;
+      --accent-hover: #0284c7;
+      --whatsapp-color: #25d366;
+      --whatsapp-hover: #1ebe5d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Menú de navegación */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent-color);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    /* Sección principal (Hero) */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem 3.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--accent-color);
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      color: var(--muted-color);
+      font-size: 1.1rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #0f172a;
+      font-weight: 700;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Catálogo y precios */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted-color);
+      margin-bottom: 2.5rem;
+    }
+
+    .grid-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--surface-color);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-color);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      background-color: rgba(56, 189, 248, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+      width: fit-content;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      color: var(--muted-color);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .precio {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+
+    .btn-card {
+      display: block;
+      text-align: center;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      background-color: rgba(248, 250, 252, 0.08);
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-card:hover {
+      background-color: var(--accent-color);
+      color: #0f172a;
+    }
+
+    /* Sección de contacto / envíos */
+    .info-box {
+      background-color: var(--surface-color);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .info-box p {
+      color: var(--muted-color);
+      max-width: 600px;
+      margin: 0.75rem auto 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted-color);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    /* Botón flotante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 200;
+      background-color: var(--whatsapp-color);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: var(--whatsapp-hover);
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .whatsapp-float {
+        bottom: 16px;
+        right: 16px;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">PULSE<span>FIT</span></a>
+      <nav aria-label="Menú principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#catalogo">Precios</a></li>
+          <li><a href="#envios">Envíos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <h1>Rendimiento y estilo en cada <span>entrenamiento</span></h1>
+      <p>Camisetas transpirables, leggings de alta compresión y conjuntos diseñados para acompañarte en el gimnasio, correr o entrenar al aire libre.</p>
+      <a href="#catalogo" class="btn-primary">Ver colección y precios</a>
+    </section>
+
+    <section id="catalogo" class="section">
+      <h2 class="section-title">Catálogo y Precios</h2>
+      <p class="section-subtitle">Tallas S, M, L y XL · Consulta disponibilidad directa por WhatsApp</p>
+
+      <div class="grid-productos">
+        <article class="card">
+          <div>
+            <span class="badge">Más vendido</span>
+            <h3>Camiseta Dry-Fit Pro</h3>
+            <p>Tejido ligero de secado rápido con costuras planas anti-rozaduras.</p>
+          </div>
+          <div>
+            <div class="precio">$24.00</div>
+            <a href="https://wa.me/TU_NUMERO?text=Hola!%20Me%20interesa%20la%20Camiseta%20Dry-Fit%20Pro%20($24.00)" target="_blank" rel="noopener noreferrer" class="btn-card">Pedir por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="badge">Alta compresión</span>
+            <h3>Legging Sculpt Cintura Alta</h3>
+            <p>Ajuste firme, tela opaca y cintura anatómica para entrenamientos intensos.</p>
+          </div>
+          <div>
+            <div class="precio">$36.00</div>
+            <a href="https://wa.me/TU_NUMERO?text=Hola!%20Me%20interesa%20el%20Legging%20Sculpt%20Cintura%20Alta%20($36.00)" target="_blank" rel="noopener noreferrer" class="btn-card">Pedir por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="badge">Nuevo</span>
+            <h3>Short Running 2 en 1</h3>
+            <p>Short exterior transpirable con malla interna y bolsillo para celular.</p>
+          </div>
+          <div>
+            <div class="precio">$28.00</div>
+            <a href="https://wa.me/TU_NUMERO?text=Hola!%20Me%20interesa%20el%20Short%20Running%202%20en%201%20($28.00)" target="_blank" rel="noopener noreferrer" class="btn-card">Pedir por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="badge">Ahorro</span>
+            <h3>Conjunto Entreno Completo</h3>
+            <p>Camiseta + short o legging a juego con descuento especial de paquete.</p>
+          </div>
+          <div>
+            <div class="precio">$52.00</div>
+            <a href="https://wa.me/TU_NUMERO?text=Hola!%20Me%20interesa%20el%20Conjunto%20Entreno%20Completo%20($52.00)" target="_blank" rel="noopener noreferrer" class="btn-card">Pedir por WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="envios" class="section">
+      <div class="info-box">
+        <h2>Envíos y Cambios</h2>
+        <p>Realizamos envíos a todo el país y entregas locales coordinadas. Cambios de talla sin complicaciones dentro de los primeros 7 días conservando las etiquetas.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 PulseFit Ropa Deportiva. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/TU_NUMERO?text=Hola!%20Quiero%20hacer%20una%20consulta%20sobre%20la%20ropa%20deportiva." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chatear por WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+
+</body>
+</html>
