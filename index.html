@@ -3,239 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PulseFit Ropa Deportiva de Alto Rendimiento</title>
-    <!-- Fuente moderna de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    
+    <title>PULSEFIT | Ropa Deportiva y Rendimiento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        /* --- VARIABLES DE COLOR (Cámbialas para adaptar a tu marca) --- */
         :root {
-            --color-primario: #111111;      /* Negro intenso */
-            --color-acento: #ccff00;        /* Verde neón deportivo */
-            --color-fondo: #f4f4f6;         /* Gris muy claro */
-            --color-texto: #333333;
-            --color-whatsapp: #25D366;
+            --pulse-oscuro: #0f172a;
+            --pulse-acento: #ff4d29;      /* Naranja coral energético */
+            --pulse-acento-hover: #e03c1b;
+            --pulse-fondo: #f8fafc;
+            --pulse-blanco: #ffffff;
+            --pulse-texto: #1e293b;
+            --pulse-gris: #64748b;
+            --pulse-whatsapp: #25D366;
         }
 
-        /* --- ESTILOS GENERALES --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--color-fondo);
-            color: var(--color-texto);
+            background-color: var(--pulse-fondo);
+            color: var(--pulse-texto);
             line-height: 1.6;
         }
 
         /* --- MENÚ DE NAVEGACIÓN --- */
         header {
-            background-color: var(--color-primario);
-            color: white;
-            padding: 1rem 5%;
+            background-color: var(--pulse-oscuro);
+            color: var(--pulse-blanco);
+            padding: 1rem 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
         }
 
         .logo {
             font-size: 1.5rem;
             font-weight: 800;
-            letter-spacing: 2px;
-            color: white;
+            letter-spacing: 1.5px;
+            color: var(--pulse-blanco);
             text-decoration: none;
         }
 
         .logo span {
-            color: var(--color-acento);
+            color: var(--pulse-acento);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 24px;
         }
 
         nav a {
-            color: white;
+            color: var(--pulse-blanco);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+            font-size: 0.92rem;
+            transition: color 0.25s ease;
         }
 
         nav a:hover {
-            color: var(--color-acento);
+            color: var(--pulse-acento);
         }
 
-        /* --- SECCIÓN PRINCIPAL (HERO) --- */
+        /* --- HERO --- */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(120deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.62)),
+                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80');
             background-size: cover;
             background-position: center;
-            height: 70vh;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
+            align-items: flex-start;
+            padding: 40px 6%;
+            color: var(--pulse-blanco);
+        }
+
+        .badge {
+            background-color: rgba(255, 77, 41, 0.18);
+            border: 1px solid var(--pulse-acento);
+            color: var(--pulse-acento);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
         }
 
         .hero h1 {
             font-size: 3rem;
             font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 10px;
+            line-height: 1.15;
+            max-width: 650px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: var(--pulse-acento);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            max-width: 600px;
+            font-size: 1.08rem;
+            color: #e2e8f0;
+            max-width: 560px;
+            margin-bottom: 28px;
         }
 
-        .btn-principal {
-            background-color: var(--color-acento);
-            color: var(--color-primario);
-            padding: 15px 30px;
+        .btn-hero {
+            background-color: var(--pulse-acento);
+            color: var(--pulse-blanco);
             text-decoration: none;
-            font-weight: 800;
-            border-radius: 5px;
-            text-transform: uppercase;
-            transition: transform 0.2s;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: background-color 0.25s ease, transform 0.2s ease;
         }
 
-        .btn-principal:hover {
-            transform: scale(1.05);
+        .btn-hero:hover {
+            background-color: var(--pulse-acento-hover);
+            transform: translateY(-2px);
         }
 
         /* --- CATÁLOGO Y PRECIOS --- */
-        .contenedor {
+        .seccion {
             max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
+            margin: 65px auto;
+            padding: 0 6%;
         }
 
-        .titulo-seccion {
+        .encabezado-seccion {
             text-align: center;
-            font-size: 2rem;
+            margin-bottom: 42px;
+        }
+
+        .encabezado-seccion h2 {
+            font-size: 2.1rem;
             font-weight: 800;
-            margin-bottom: 40px;
-            text-transform: uppercase;
+            color: var(--pulse-oscuro);
+            margin-bottom: 8px;
+        }
+
+        .encabezado-seccion p {
+            color: var(--pulse-gris);
+            font-size: 0.98rem;
         }
 
         .grid-productos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+            gap: 28px;
         }
 
-        .tarjeta {
-            background: white;
-            border-radius: 10px;
+        .producto {
+            background: var(--pulse-blanco);
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+            border: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .tarjeta:hover {
-            transform: translateY(-5px);
+        .producto:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
         }
 
-        .tarjeta img {
+        .producto img {
             width: 100%;
-            height: 280px;
+            height: 270px;
             object-fit: cover;
         }
 
-        .info-producto {
+        .producto-cuerpo {
             padding: 20px;
         }
 
-        .info-producto h3 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
+        .producto-cuerpo h3 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--pulse-oscuro);
+            margin-bottom: 6px;
         }
 
-        .descripcion {
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 15px;
+        .producto-cuerpo p {
+            font-size: 0.88rem;
+            color: var(--pulse-gris);
+            margin-bottom: 16px;
         }
 
         .precio {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 800;
-            color: var(--color-primario);
-            margin-bottom: 15px;
+            color: var(--pulse-oscuro);
+            margin-bottom: 16px;
         }
 
-        .btn-comprar {
+        .btn-wa {
             display: block;
             text-align: center;
-            background-color: var(--color-primario);
-            color: white;
             text-decoration: none;
-            padding: 10px;
-            border-radius: 5px;
+            background-color: var(--pulse-oscuro);
+            color: var(--pulse-blanco);
+            padding: 11px 16px;
+            border-radius: 8px;
             font-weight: 600;
-            transition: background 0.3s;
+            font-size: 0.92rem;
+            transition: background-color 0.25s ease;
         }
 
-        .btn-comprar:hover {
-            background-color: var(--color-whatsapp);
-            color: white;
+        .btn-wa:hover {
+            background-color: var(--pulse-whatsapp);
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: var(--color-primario);
-            color: white;
+            background-color: var(--pulse-oscuro);
+            color: var(--pulse-blanco);
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
+            padding: 36px 6%;
+            margin-top: 70px;
         }
 
-        /* --- BOTÓN FLOTANTE DE WHATSAPP --- */
-        .whatsapp-float {
+        footer p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+
+        /* --- BOTÓN FLOTANTE WHATSAPP --- */
+        .whatsapp-flotante {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: var(--color-whatsapp);
-            color: white;
+            right: 24px;
+            bottom: 24px;
             width: 60px;
             height: 60px;
             border-radius: 50%;
+            background-color: var(--pulse-whatsapp);
+            color: var(--pulse-blanco);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
             z-index: 1000;
-            transition: transform 0.3s;
+            transition: transform 0.25s ease;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
+        .whatsapp-flotante:hover {
+            transform: scale(1.08);
         }
 
-        /* --- ADAPTACIÓN A MÓVILES --- */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2rem; }
-            nav ul { gap: 10px; }
-            nav a { font-size: 0.8rem; }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.1rem; }
+            nav ul { gap: 14px; }
+            nav a { font-size: 0.82rem; }
         }
     </style>
 </head>
@@ -243,11 +281,11 @@
 
     <!-- MENÚ -->
     <header>
-        <a href="#" class="logo">APEX<span>SPORT</span></a>
+        <a href="#inicio" class="logo">PULSE<span>FIT</span></a>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#catalogo">Precios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -255,73 +293,72 @@
 
     <!-- PORTADA -->
     <section id="inicio" class="hero">
-        <h1>Supera tus límites</h1>
-        <p>Ropa deportiva diseñada con tecnología transpirable para máximo confort en cada entrenamiento.</p>
-        <a href="#catalogo" class="btn-principal">Ver Colección</a>
+        <span class="badge">Nueva Línea PulseFit</span>
+        <h1>Entrena con ritmo y <span>libertad total</span></h1>
+        <p>Prendas deportivas pensadas para gimnasio, running y movimiento diario, con ajuste cómodo y tela respirable.</p>
+        <a href="#catalogo" class="btn-hero">Explorar Precios</a>
     </section>
 
-    <!-- PRODUCTOS Y PRECIOS -->
-    <section id="catalogo" class="contenedor">
-        <h2 class="titulo-seccion">Nuestra Colección</h2>
-        
+    <!-- CATÁLOGO Y PRECIOS -->
+    <section id="catalogo" class="seccion">
+        <div class="encabezado-seccion">
+            <h2>Catálogo y Precios</h2>
+            <p>Haz clic en cualquier prenda para pedir tu talla directamente por WhatsApp.</p>
+        </div>
+
         <div class="grid-productos">
-            <!-- Producto 1 -->
-            <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80" alt="Camiseta Dry-Fit">
-                <div class="info-producto">
-                    <h3>Camiseta Pro Dry-Fit</h3>
-                    <p class="descripcion">Tela ultraligera de secado rápido. Tallas S, M, L, XL.</p>
-                    <div class="precio">$25.00 USD</div>
-                    <a href="https://wa.me/521000000000?text=Hola,%20me%20interesa%20la%20Camiseta%20Pro%20Dry-Fit" target="_blank" class="btn-comprar">Pedir por WhatsApp</a>
+            <article class="producto">
+                <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=600&q=80" alt="Camiseta PulseFit">
+                <div class="producto-cuerpo">
+                    <h3>Camiseta Pulse Airflow</h3>
+                    <p>Ligera, fresca y de secado rápido. Tallas S a XL.</p>
+                    <div class="precio">$24.00 USD</div>
+                    <a class="btn-wa" href="https://wa.me/521000000000?text=Hola%20PulseFit,%20quiero%20pedir%20la%20Camiseta%20Pulse%20Airflow" target="_blank">Pedir por WhatsApp</a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Producto 2 -->
-            <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=600&q=80" alt="Leggings de Compresión">
-                <div class="info-producto">
-                    <h3>Leggings High-Flex</h3>
-                    <p class="descripcion">Cintura alta, cero transparencias y soporte muscular.</p>
-                    <div class="precio">$38.00 USD</div>
-                    <a href="https://wa.me/521000000000?text=Hola,%20me%20interesan%20los%20Leggings%20High-Flex" target="_blank" class="btn-comprar">Pedir por WhatsApp</a>
+            <article class="producto">
+                <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=600&q=80" alt="Legging PulseFit">
+                <div class="producto-cuerpo">
+                    <h3>Legging Pulse Sculpt</h3>
+                    <p>Pretina alta firme y gran elasticidad para entrenar sin límites.</p>
+                    <div class="precio">$36.00 USD</div>
+                    <a class="btn-wa" href="https://wa.me/521000000000?text=Hola%20PulseFit,%20quiero%20pedir%20el%20Legging%20Pulse%20Sculpt" target="_blank">Pedir por WhatsApp</a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Producto 3 -->
-            <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=600&q=80" alt="Shorts de Entrenamiento">
-                <div class="info-producto">
-                    <h3>Shorts Runner 2 en 1</h3>
-                    <p class="descripcion">Con licra interna y bolsillo oculto para celular.</p>
-                    <div class="precio">$30.00 USD</div>
-                    <a href="https://wa.me/521000000000?text=Hola,%20me%20interesan%20los%20Shorts%20Runner" target="_blank" class="btn-comprar">Pedir por WhatsApp</a>
+            <article class="producto">
+                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=600&q=80" alt="Short PulseFit">
+                <div class="producto-cuerpo">
+                    <h3>Short Pulse Sprint</h3>
+                    <p>Corte cómodo y transpirable para cardio, pesas o trote.</p>
+                    <div class="precio">$28.00 USD</div>
+                    <a class="btn-wa" href="https://wa.me/521000000000?text=Hola%20PulseFit,%20quiero%20pedir%20el%20Short%20Pulse%20Sprint" target="_blank">Pedir por WhatsApp</a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Producto 4 -->
-            <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80" alt="Sudadera Deportiva">
-                <div class="info-producto">
-                    <h3>Hoodie Térmico Apex</h3>
-                    <p class="descripcion">Ideal para calentamiento y entrenamientos al aire libre.</p>
-                    <div class="precio">$45.00 USD</div>
-                    <a href="https://wa.me/521000000000?text=Hola,%20me%20interesa%20el%20Hoodie%20Térmico" target="_blank" class="btn-comprar">Pedir por WhatsApp</a>
+            <article class="producto">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80" alt="Sudadera PulseFit">
+                <div class="producto-cuerpo">
+                    <h3>Sudadera Pulse Core</h3>
+                    <p>Abrigo suave y moderno para antes o después de entrenar.</p>
+                    <div class="precio">$44.00 USD</div>
+                    <a class="btn-wa" href="https://wa.me/521000000000?text=Hola%20PulseFit,%20quiero%20pedir%20la%20Sudadera%20Pulse%20Core" target="_blank">Pedir por WhatsApp</a>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
-    <!-- PIE DE PÁGINA -->
+    <!-- CONTACTO / FOOTER -->
     <footer id="contacto">
-        <h3>APEX SPORT</h3>
-        <p>Envíos a todo el país | Pagos seguros</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; color: #888;">© 2026 Todos los derechos reservados.</p>
+        <div class="logo">PULSE<span>FIT</span></div>
+        <p>Atención directa por WhatsApp · Envíos a domicilio · Cambios fáciles</p>
+        <p>© 2026 PulseFit. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/521000000000?text=Hola,%20quisiera%20más%20información%20sobre%20su%20ropa%20deportiva" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
-        <!-- Ícono SVG de WhatsApp -->
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="white">
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a class="whatsapp-flotante" href="https://wa.me/521000000000?text=Hola%20PulseFit,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20de%20su%20cat%C3%A1logo" target="_blank" aria-label="Chatear por WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
         </svg>
     </a>
